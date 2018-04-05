@@ -1,7 +1,9 @@
 'use strict'
 
-let _ = require('./lodash');
+const _ = require('./lodash');
+const helmet = require('./helmet')
 
 module.exports = Object.assign({}, {
-    _
+    _ ,
+    helmet 
 })
