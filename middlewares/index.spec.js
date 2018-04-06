@@ -19,11 +19,9 @@ describe('Middlewares --> ', () => {
     describe('index.js --> ', () => {
         describe('init function --> ', () => {
             let helmetInitStub;
-            let routesStub;
 
             beforeEach(() => {
                 helmetInitStub = sandbox.stub(helmet, 'init');
-                routesStub = sandbox.stub();
             });
 
             it('should throw an exception if app is not provided', () => {
@@ -44,17 +42,15 @@ describe('Middlewares --> ', () => {
                 helmetInitStub.callCount.should.be.equal(1);
             });
 
-            it('should define routes if router is provided', () => {
+            it('should define router middleware if it is passed as an argument', () => {
+                let appUseStub = sandbox.stub();
                 index.init({
                     app: {
-                        use: () => {}
-                    }, router: {
-                        routes: routesStub
-                    }
+                        use: appUseStub
+                    }, router: {}
                 });
-                
-                routesStub.callCount.should.be.equal(1);
-            });
+                appUseStub.callCount.should.be.equal(2);
+            })
         });
     })
 })

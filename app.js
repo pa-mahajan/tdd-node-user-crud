@@ -37,7 +37,7 @@ const initiateServer = (params = {}) => {
     if(!app || !app.listen){
         throw('Invalid Arguments Passed'); 
     }
-
+    
     app.listen(config.port);
 }
 

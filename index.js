@@ -17,5 +17,4 @@ const _init =  () => {
     app.init();
 }
 
-module.exports = Object.assign({}, {
-})
+_init()

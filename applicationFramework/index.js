@@ -1,11 +1,13 @@
 'use strict'
 
+const { express } = require('./../dependencies');
+
 const init = () => {
-    let app = {};
-    const router = {};
+    let app = express();
+    const router = express.Router();
 
     return {
-        app, 
+        app,
         router
     }
 }

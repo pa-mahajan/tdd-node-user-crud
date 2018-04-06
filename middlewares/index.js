@@ -13,7 +13,7 @@ const init = function (params = {}) {
 
     app.use(helmet.init());
 
-    if(router) app.use(router.routes());
+    if(router) app.use(router);
 }
 
 module.exports = Object.assign({}, {
